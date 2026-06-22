@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ConvaPDF Thermal Printing Ecosystem</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        .card-subtle {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .card-subtle:hover {
+            border-color: #111827;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .brand-logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+        /* Custom sidebar highlight active track */
+        .sidebar-link.active {
+            color: #111827;
+            font-weight: 700;
+            border-left-color: #111827;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <!-- Fixed Glassmorphic Navigation Menu -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                   <img src="Assets/logo crop.png" alt="ConvaPDF Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">     
+                   <span style="display:none;" class="font-bold text-xl tracking-tight text-slate-900">ConvaPDF</span>
+                </a>
+            </div>
+            
+            <button class="block md:hidden p-2 text-slate-700 hover:text-black" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                <a href="hardware.html" class="hover:text-black transition-colors">Hardware</a>
+                <a href="android.html" class="hover:text-black transition-colors">Android App</a>
+                <a href="ios.html" class="hover:text-black transition-colors">iOS App (Beta)</a>
+                <a href="cloud.html" class="hover:text-black transition-colors">Cloud Suite</a>
+                <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+                <a href="careers.html" class="hover:text-black transition-colors">Careers</a>
+                <a href="contact.html" class="hover:text-black transition-colors">Contact</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 flex flex-col space-y-4 font-medium text-sm text-slate-600">
+            <a href="index.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Home</a>
+            <a href="hardware.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Hardware</a>
+            <a href="android.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Android App</a>
+            <a href="ios.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">iOS App (Beta)</a>
+            <a href="cloud.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Cloud Suite</a>
+            <a href="about.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">About Us</a>
+            <a href="careers.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Careers</a>
+            <a href="contact.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-12 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 max-w-full text-center">
+                <span>Effective Date: June 22, 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                Our Commitment to <br><span class="gradient-text">Absolute Transparency.</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Privacy isn't just legalese—it's a system feature. Explore how the ConvaPDF mobile applications, inkless hardware models, and cloud webhook API channels protect your commercial transactional details.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Privacy Sandbox & Consent Controller -->
+    <section class="py-6 px-6">
+        <div class="max-w-5xl mx-auto bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="text-xs font-bold text-orange-600 tracking-wider uppercase block">PRIVACY SANDBOX</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Customized Data Collection Consent</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Toggle permissions below to simulate how the local mobile device app maps diagnostic payloads. We prioritize local processing over remote cloud retention pipelines.
+                    </p>
+
+                    <!-- Interactive Slider Toggles -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-gray-100">
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Bluetooth Diagnostics Metrics</span>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">Stores local pairing timestamps and Signal Strength (RSSI) indicators for BLE connectivity troubleshooting.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="consent-ble" checked onchange="updatePrivacySandbox()" class="sr-only peer">
+                                <div class="w-9 h-5 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-900"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-gray-100">
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Single-Bit PDF Caching</span>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">Temporarily buffers generated document rasters to high-speed local device storage to prevent packet drops during multiple copies print flows.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="consent-cache" checked onchange="updatePrivacySandbox()" class="sr-only peer">
+                                <div class="w-9 h-5 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-900"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-gray-100">
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Cloud API Webhook Event Logs</span>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">Saves anonymous transaction logs inside Cloud Suite to verify successful merchant order execution triggers.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="consent-logs" onchange="updatePrivacySandbox()" class="sr-only peer">
+                                <div class="w-9 h-5 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-900"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Sandbox Simulator Display -->
+                <div class="lg:col-span-5 bg-slate-950 text-indigo-300 rounded-2xl p-6 border border-slate-800 h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-900 pb-3 mb-4">
+                            <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">Simulated Sandbox Device Output</span>
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
+                        </div>
+                        <pre id="sandbox-output" class="font-mono text-[11px] leading-relaxed whitespace-pre overflow-x-auto text-green-400 max-h-[180px] scrollbar-none"></pre>
+                    </div>
+                    <button onclick="saveSandboxConfig()" class="mt-6 w-full py-2.5 bg-slate-900 hover:bg-black text-white text-xs font-bold rounded-lg transition-all border border-slate-800 shadow-md">
+                        Commit Configurations
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Interactive Content Layout -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Sidebar Document Navigator (3 columns wide) -->
+            <div class="hidden lg:block lg:col-span-3 sticky top-28 h-fit space-y-6">
+                <div class="bg-white border border-gray-200 rounded-3xl p-6">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Table of Contents</h4>
+                    <div class="flex flex-col space-y-3 text-sm text-slate-500 font-medium border-l border-gray-200">
+                        <a href="#introduction" id="lnk-intro" onclick="scrollToElement('introduction')" class="sidebar-link pl-4 border-l-2 border-transparent hover:text-black transition-all">1. General Scope</a>
+                        <a href="#data-collection" id="lnk-collection" onclick="scrollToElement('data-collection')" class="sidebar-link pl-4 border-l-2 border-transparent hover:text-black transition-all">2. Information Collection</a>
+                        <a href="#data-usage" id="lnk-usage" onclick="scrollToElement('data-usage')" class="sidebar-link pl-4 border-l-2 border-transparent hover:text-black transition-all">3. Data Usage Framework</a>
+                        <a href="#bluetooth-security" id="lnk-bluetooth" onclick="scrollToElement('bluetooth-security')" class="sidebar-link pl-4 border-l-2 border-transparent hover:text-black transition-all">4. Bluetooth & IoT Security</a>
+                        <a href="#gdpr-rights" id="lnk-rights" onclick="scrollToElement('gdpr-rights')" class="sidebar-link pl-4 border-l-2 border-transparent hover:text-black transition-all">5. Your Privacy Rights</a>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-100 rounded-2xl border border-gray-200/50">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">DATA CONTROLLER</span>
+                    <h5 class="text-xs font-bold text-slate-800">ConvaPDF Legal & Compliance</h5>
+                    <p class="text-[10px] text-slate-500 leading-relaxed mt-1">BKC Bandra East, Mumbai Headquarters, APAC</p>
+                    <a href="contact.html" class="text-[10px] font-bold text-indigo-600 hover:underline mt-2 inline-block">Contact Data Officer</a>
+                </div>
+            </div>
+
+            <!-- Main Legal content sections (9 columns wide) -->
+            <div class="lg:col-span-9 space-y-12">
+                
+                <!-- Search & Filter bar for document -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 justify-between shadow-sm">
+                    <div class="flex items-center gap-2.5 w-full sm:w-max">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+                        <input type="text" id="policy-search" placeholder="Search policy (e.g. GDPR, Bluetooth, Caching)" oninput="filterPolicySections()" class="w-full text-xs outline-none bg-transparent placeholder-slate-400 text-slate-800">
+                    </div>
+                    <span class="text-[10px] font-mono bg-slate-100 text-slate-500 px-2.5 py-1 rounded" id="search-feedback">Enter query to parse text</span>
+                </div>
+
+                <div class="space-y-10" id="policy-content">
+                    
+                    <!-- Section 1 -->
+                    <div id="introduction" class="policy-sec bg-white border border-gray-200 rounded-3xl p-6 md:p-8 space-y-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xs font-bold text-slate-400 font-mono">01 /</span>
+                            <h3 class="text-xl font-bold text-slate-900">General Scope & Philosophy</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            ConvaPDF Tech Group designs physical-digital bridges using inkless micro-controllers, standard Android files compilation APIs, and SwiftUI iOS TestFlight pipelines. We maintain an <strong>offline-first operational philosophy</strong>: the majority of print conversion metrics, vector layouts, and PDF parsing cycles are completed on-device.
+                        </p>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            We do not run advertising-supported platforms or monetize client transaction histories. Our business model relies purely on professional thermal hardware sales, custom-branded paper supplies, and SaaS Enterprise Cloud Suite parameters.
+                        </p>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div id="data-collection" class="policy-sec bg-white border border-gray-200 rounded-3xl p-6 md:p-8 space-y-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xs font-bold text-slate-400 font-mono">02 /</span>
+                            <h3 class="text-xl font-bold text-slate-900">Information We Collect</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            When operating our mobile interfaces or utilizing cloud automation streams, the system monitors distinct categories of operational metadata depending on your active integrations configuration permissions:
+                        </p>
+                        <ul class="space-y-3 pl-4 text-xs md:text-sm text-slate-600 leading-relaxed list-disc">
+                            <li><strong>Account Identifiers:</strong> Name, Apple ID or Google email references used to authenticate TestFlight passes, custom cloud API tokens, and purchase orders.</li>
+                            <li><strong>Local Document Assets:</strong> PDF files or custom image layouts processed for printing. These vector rasters are converted directly on the hardware side and are not transmitted to ConvaPDF corporate repositories.</li>
+                            <li><strong>IoT Device Identifiers:</strong> Serial numbers, Mac addresses, and battery temperature diagnostics for paired ConvaPrinter 57mm hardware.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div id="data-usage" class="policy-sec bg-white border border-gray-200 rounded-3xl p-6 md:p-8 space-y-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xs font-bold text-slate-400 font-mono">03 /</span>
+                            <h3 class="text-xl font-bold text-slate-900">Data Usage & Webhook Framework</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            If using the <strong>ConvaPDF Cloud Suite</strong> endpoints, our system ingests parameters from third-party webhook integrations (including Shopify store databases, Stripe billing hooks, and customized developer triggers).
+                        </p>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            These incoming data pipelines are ingested strictly to construct corresponding layouts for remote print nodes. Incoming payloads are stored with absolute encryption (TLS 1.3 protocol) and automatically purge from diagnostic caches within twenty-four hours of successful print execution.
+                        </p>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div id="bluetooth-security" class="policy-sec bg-white border border-gray-200 rounded-3xl p-6 md:p-8 space-y-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xs font-bold text-slate-400 font-mono">04 /</span>
+                            <h3 class="text-xl font-bold text-slate-900">Bluetooth BLE & Local Security</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            Our pocket printers connect over Bluetooth Low Energy (BLE 5.2). To run scanning loops on certain mobile versions, standard OS platforms require access to Fine Location permissions.
+                        </p>
+                        <ul class="space-y-3 pl-4 text-xs md:text-sm text-slate-600 leading-relaxed list-disc">
+                            <li><strong>Location Data Scope:</strong> ConvaPDF applications do not process, catalog, or transmit your device's geographical GPS coordinate coordinates. Location permissions are used strictly to scan BLE channels.</li>
+                            <li><strong>Handshake Encryption:</strong> All direct print queues transmitted between your phone client and the thermal printhead employ automated operational encryption algorithms, preventing adjacent signal tracking.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div id="gdpr-rights" class="policy-sec bg-white border border-gray-200 rounded-3xl p-6 md:p-8 space-y-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xs font-bold text-slate-400 font-mono">05 /</span>
+                            <h3 class="text-xl font-bold text-slate-900">Your Privacy Rights (GDPR & CCPA)</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            Regardless of your geography, ConvaPDF provides equal transparency parameters globally. Under standard protections (including GDPR, CCPA, and Indian Digital Personal Data Protection laws), you hold clear privileges:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 bg-[#fafafa] rounded-2xl border border-gray-200">
+                                <h4 class="text-xs font-bold text-slate-900 mb-1">Right to Deletion (GDPR)</h4>
+                                <p class="text-[11px] text-slate-500 leading-normal">Purge your registered cloud templates, saved API configurations, and TestFlight boarding tokens entirely.</p>
+                            </div>
+                            <div class="p-4 bg-[#fafafa] rounded-2xl border border-gray-200">
+                                <h4 class="text-xs font-bold text-slate-900 mb-1">Right to Access</h4>
+                                <p class="text-[11px] text-slate-500 leading-normal">Download a structured JSON export of any transactional histories associated with your bulk shipping accounts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- In-app interactive Notification framework -->
+    <div id="notify-popup" class="fixed bottom-6 right-6 bg-slate-950 text-white rounded-2xl px-5 py-3 shadow-2xl border border-slate-800 text-xs font-semibold tracking-wide hidden items-center gap-2.5 z-50 animate-bounce">
+        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-ping"></div>
+        <span id="notify-msg">Message copied successfully!</span>
+    </div>
+
+    <!-- Footer Block -->
+    <footer class="py-16 border-t border-gray-100 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 pt-1">
+                    <div class="flex items-center mb-4">
+                        <img src="Assets/logo crop.png" alt="ConvaPDF Logo" style="height: 30px; width: auto; display: block;" />
+                    </div>
+                    <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                        A production-ready retail application paired with inkless thermal hardware, transforming smartphones into high-speed billing terminals with professional formatting and quick-connect printer utilities.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Product</h5>
+                    <ul class="space-y-2">
+                        <li><a href="hardware.html" class="hover:text-black">Hardware</a></li>
+                        <li><a href="ios.html" class="hover:text-black">iOS App</a></li>
+                        <li><a href="android.html" class="hover:text-black">Android App</a></li>
+                        <li><a href="cloudsuite.html" class="hover:text-black">Cloud Suite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-black">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-black">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Support</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-black">Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-black">Contact Us</a></li>
+                        <li><a href="privacypolicy.html" class="hover:text-black">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2026 ConvaPDF.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Global Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // --- Custom Notifications Engine ---
+        function showNotification(msg) {
+            const popup = document.getElementById('notify-popup');
+            document.getElementById('notify-msg').innerText = msg;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 3000);
+        }
+
+        // --- Interactive Privacy Consent Sandbox Simulator ---
+        function updatePrivacySandbox() {
+            const bleEnabled = document.getElementById('consent-ble').checked;
+            const cacheEnabled = document.getElementById('consent-cache').checked;
+            const logsEnabled = document.getElementById('consent-logs').checked;
+
+            const simulationState = {
+                device_model: "ConvaPhone Simulator",
+                pairing_mode: bleEnabled ? "Local Bluetooth (Encrypted)" : "Hardware Manual-Link",
+                pdf_raster_buffer: cacheEnabled ? "24h Temp Cache Active (RAM)" : "Disabled (Direct head streams - slower)",
+                telemetry_status: logsEnabled ? "Online Diagnostic Telemetry Active" : "100% Offline Standalone",
+                encryption_layer: "TLS 1.3 Key Exchange",
+                policy_version: "v4.2.0-June2026"
+            };
+
+            document.getElementById('sandbox-output').innerText = JSON.stringify(simulationState, null, 2);
+        }
+
+        function saveSandboxConfig() {
+            showNotification("Privacy configuration synced to local system!");
+        }
+
+        // --- Real-time Search and Highlights Filter ---
+        function filterPolicySections() {
+            const query = document.getElementById('policy-search').value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.policy-sec');
+            const feedbackEl = document.getElementById('search-feedback');
+            let matchCount = 0;
+
+            sections.forEach(sec => {
+                const text = sec.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    sec.classList.remove('opacity-40');
+                    sec.style.borderColor = query.length > 1 ? '#111827' : '#e5e7eb';
+                    matchCount++;
+                } else {
+                    sec.classList.add('opacity-40');
+                    sec.style.borderColor = '#e5e7eb';
+                }
+            });
+
+            if (query === "") {
+                sections.forEach(sec => {
+                    sec.classList.remove('opacity-40');
+                    sec.style.borderColor = '#e5e7eb';
+                });
+                feedbackEl.innerText = "Enter query to parse text";
+                feedbackEl.className = "text-[10px] font-mono bg-slate-100 text-slate-500 px-2.5 py-1 rounded";
+            } else {
+                feedbackEl.innerText = `${matchCount} section(s) found`;
+                feedbackEl.className = `text-[10px] font-mono px-2.5 py-1 rounded ${matchCount > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+            }
+        }
+
+        // --- Smooth Sidebar Scroll Navigator ---
+        function scrollToElement(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Highlight active sidebar links
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.getElementById(`lnk-${id.replace('introduction', 'intro').replace('data-collection', 'collection').replace('data-usage', 'usage').replace('bluetooth-security', 'bluetooth').replace('gdpr-rights', 'rights')}`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+
+        // Run default simulation settings on boot
+        updatePrivacySandbox();
+    </script>
+</body>
+</html>
