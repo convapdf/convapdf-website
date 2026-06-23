@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ConvaPDF Thermal Printing Ecosystem</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        .card-subtle {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .card-subtle:hover {
+            border-color: #111827;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .brand-logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+        /* Thermal Receipt Simulation Styles */
+        .thermal-feed {
+            animation: printOut 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: top center;
+        }
+        @keyframes printOut {
+            0% {
+                transform: scaleY(0);
+                opacity: 0;
+                max-height: 0;
+            }
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+                max-height: 800px;
+            }
+        }
+        /* Jagged bottom edge for real thermal paper feel */
+        .jagged-edge {
+            background-image: linear-gradient(-45deg, transparent 4px, #ffffff 4px), 
+                              linear-gradient(45deg, transparent 4px, #ffffff 4px);
+            background-size: 8px 12px;
+            background-repeat: repeat-x;
+            background-position: bottom left;
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <!-- Fixed Glassmorphic Navigation Menu -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                   <img src="Assets/logo crop.png" alt="ConvaPDF Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">     
+                   <span style="display:none;" class="font-bold text-xl tracking-tight text-slate-900">ConvaPDF</span>
+                </a>
+            </div>
+            
+            <button class="block md:hidden p-2 text-slate-700 hover:text-black" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                <a href="hardware.html" class="hover:text-black transition-colors">Hardware</a>
+                <a href="android.html" class="hover:text-black transition-colors">Android App</a>
+                <a href="ios.html" class="hover:text-black transition-colors">iOS App (Beta)</a>
+                <a href="cloud.html" class="hover:text-black transition-colors">Cloud Suite</a>
+                <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+                <a href="career.html" class="hover:text-black transition-colors">Careers</a>
+                <a href="#" class="text-black border-b-2 border-slate-950 pb-1 transition-colors">Contact</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 flex flex-col space-y-4 font-medium text-sm text-slate-600">
+            <a href="index.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Home</a>
+            <a href="hardware.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Hardware</a>
+            <a href="android.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Android App</a>
+            <a href="ios.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">iOS App (Beta)</a>
+            <a href="cloud.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Cloud Suite</a>
+            <a href="about.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">About Us</a>
+            <a href="careers.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Careers</a>
+            <a href="#" class="text-black transition-colors" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-16 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 max-w-full text-center">
+                <span>Ecosystem Help Desk</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                Let's Print Big Projects <br><span class="gradient-text">Together.</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Have questions about custom retail integrations, enterprise sales, Bluetooth API structures, or simply need premium thermal paper logistics? Our support engineers are standing by.
+            </p>
+        </div>
+    </section>
+
+    <!-- Form & Virtual Printer Section -->
+    <section class="py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Contact Input Box (Left side, takes 7 cols) -->
+            <div class="lg:col-span-7 bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-sm">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-slate-900">Send an Inquiry</h3>
+                    <p class="text-slate-500 text-sm mt-1">Fill out the variables below to trigger a live message dispatch sequence.</p>
+                </div>
+
+                <form id="contact-form" onsubmit="handleInquirySubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Full Name</label>
+                            <input type="text" id="contact-name" required placeholder="John Doe" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 transition-all text-slate-800">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Email Address</label>
+                            <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 transition-all text-slate-800">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Inquiry Type</label>
+                            <select id="contact-type" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 transition-all text-slate-800 cursor-pointer">
+                                <option value="Wholesale & Hardware">Bulk Hardware / Retail</option>
+                                <option value="Developer API">Developer & Cloud Suite</option>
+                                <option value="Customer Support">Standard Hardware Help</option>
+                                <option value="Partnerships">Strategic Business Partnership</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Order / Serial ID (Optional)</label>
+                            <input type="text" id="contact-serial" placeholder="e.g. #CP-9022X" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 transition-all text-slate-800">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Your Message</label>
+                        <textarea id="contact-message" required placeholder="Describe your logistics goals, hardware queries, or customization needs..." class="w-full h-36 text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 transition-all resize-none text-slate-800"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-100">
+                        <i data-lucide="printer" class="w-4 h-4"></i> Submit & Print Support Ticket
+                    </button>
+                </form>
+            </div>
+
+            <!-- Virtual 57mm Thermal Printer Simulator (Right side, takes 5 cols) -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+                
+                <!-- Physical Printer Head Slot Container -->
+                <div class="w-full max-w-[360px] bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 flex flex-col items-center relative overflow-hidden">
+                    <div class="absolute top-2 left-6 right-6 h-1 bg-slate-800 rounded-full"></div>
+                    
+                    <!-- Printer branding visual -->
+                    <div class="flex items-center gap-2 mb-4 self-start">
+                        <div class="w-5 h-5 bg-orange-400 rounded flex items-center justify-center">
+                            <span class="text-[9px] font-bold text-slate-900">C</span>
+                        </div>
+                        <span class="text-[10px] font-extrabold tracking-widest text-slate-300 uppercase">Conva Printer 57mm</span>
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-ping ml-auto"></div>
+                    </div>
+
+                    <!-- Paper slot mouth -->
+                    <div class="w-full h-4 bg-slate-950 rounded-lg shadow-inner border-b border-slate-800 flex items-center justify-center relative z-10">
+                        <div class="w-11/12 h-[2px] bg-slate-900"></div>
+                    </div>
+
+                    <!-- Printed Receipt Output Target -->
+                    <div id="printer-paper-bin" class="w-full flex justify-center pt-2 relative z-0">
+                        
+                        <!-- Empty visual state -->
+                        <div id="printer-empty-msg" class="text-center py-16 text-slate-500 px-4">
+                            <i data-lucide="info" class="w-8 h-8 mx-auto mb-3 text-slate-600"></i>
+                            <span class="text-xs font-bold block mb-1">Printer Standby</span>
+                            <p class="text-[10px] text-slate-600 leading-relaxed">Complete the contact form on the left to print your priority verified contact receipt.</p>
+                        </div>
+
+                        <!-- Simulated Thermal Receipt (Hidden by default, unrolls via JS) -->
+                        <div id="printer-receipt" class="hidden w-11/12 bg-white text-slate-950 px-5 pt-6 pb-8 shadow-2xl relative jagged-edge thermal-feed">
+                            
+                            <!-- Header Info -->
+                            <div class="text-center pb-4 border-b border-dashed border-slate-400">
+                                <span class="text-[11px] font-bold block tracking-widest">CONVAPDF TECH GROUP</span>
+                                <span class="text-[8px] text-slate-500 block">57mm Local Service Pass</span>
+                                <span class="text-[9px] font-mono mt-2 inline-block bg-slate-100 px-2 py-0.5 rounded" id="receipt-ticket-no">#CP-9812A</span>
+                            </div>
+
+                            <!-- Transaction Metrics -->
+                            <div class="py-4 space-y-3 text-xs border-b border-dashed border-slate-400 font-mono">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 uppercase text-[9px]">Sender:</span>
+                                    <span class="font-bold text-[10px] truncate max-w-[140px]" id="receipt-name">John Doe</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 uppercase text-[9px]">Email:</span>
+                                    <span class="font-bold text-[10px] truncate max-w-[140px]" id="receipt-email">john@example.com</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 uppercase text-[9px]">Route Type:</span>
+                                    <span class="font-bold text-[10px]" id="receipt-route">API & Cloud</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 uppercase text-[9px]">Serial ID:</span>
+                                    <span class="font-bold text-[10px]" id="receipt-serial">#NONE</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 uppercase text-[9px]">Date Loop:</span>
+                                    <span class="font-bold text-[10px]" id="receipt-date">2026-06-22</span>
+                                </div>
+                            </div>
+
+                            <!-- Body Text of Inquiry -->
+                            <div class="py-4 text-[10px] leading-normal font-sans border-b border-dashed border-slate-400">
+                                <span class="text-[9px] text-slate-500 font-mono uppercase block mb-1">Message Body:</span>
+                                <p class="text-slate-800 italic" id="receipt-message">This is a simulated message body.</p>
+                            </div>
+
+                            <!-- Barcode Simulation for premium visual appeal -->
+                            <div class="pt-4 flex flex-col items-center justify-center space-y-1">
+                                <svg class="w-full h-10" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="3" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="6" y="0" width="3" height="40" fill="black"/>
+                                    <rect x="11" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="14" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="18" y="0" width="4" height="40" fill="black"/>
+                                    <rect x="24" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="27" y="0" width="3" height="40" fill="black"/>
+                                    <rect x="32" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="36" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="42" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="46" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="50" y="0" width="3" height="40" fill="black"/>
+                                    <rect x="55" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="58" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="62" y="0" width="4" height="40" fill="black"/>
+                                    <rect x="68" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="71" y="0" width="3" height="40" fill="black"/>
+                                    <rect x="76" y="0" width="2" height="40" fill="black"/>
+                                    <rect x="80" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="84" y="0" width="4" height="40" fill="black"/>
+                                    <rect x="91" y="0" width="1" height="40" fill="black"/>
+                                    <rect x="94" y="0" width="3" height="40" fill="black"/>
+                                </svg>
+                                <span class="text-[7px] font-mono tracking-widest text-slate-500 uppercase">Verification Auth Token</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Post-Print Actions (Hidden until printed) -->
+                <div id="receipt-actions" class="hidden mt-4 w-full max-w-[360px] flex items-center justify-between gap-4">
+                    <button onclick="copyReceiptCode()" class="flex-1 py-3 bg-white border border-gray-200 hover:border-black text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Ticket ID
+                    </button>
+                    <button onclick="resetPrinter()" class="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Print Another
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Location Hub Switcher -->
+    <section class="py-16 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest block mb-1">GLOBAL PRESENCE</span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Operations Hubs</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Click on a regional office below to inspect physical locations, local team details, and regional time tracking.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center gap-2 mb-8 flex-wrap">
+                <button id="tab-mumbai" onclick="switchLocation('mumbai')" class="px-5 py-2.5 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-md">Mumbai, India</button>
+                <button id="tab-sf" onclick="switchLocation('sf')" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#fafafa] text-slate-500 border border-gray-200 hover:border-black transition-all">San Francisco, US</button>
+                <button id="tab-london" onclick="switchLocation('london')" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#fafafa] text-slate-500 border border-gray-200 hover:border-black transition-all">London, UK</button>
+            </div>
+
+            <!-- Location Cards -->
+            <div class="max-w-4xl mx-auto bg-[#fafafa] border border-gray-200 rounded-3xl p-6 md:p-8">
+                
+                <!-- Mumbai Hub Details -->
+                <div id="content-mumbai" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
+                            <h3 class="text-xl font-bold text-slate-900">Mumbai Headquarters (APAC)</h3>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Located inside the fast-moving tech corridors of Mumbai, this is our central retail product hub. All wholesale hardware distribution and regional logistics pipelines are managed here.
+                        </p>
+                        <div class="space-y-3 font-mono text-xs text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-indigo-500"></i>
+                                <span>BKC, Bandra East, Mumbai, Maharashtra 400051</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-4 h-4 text-indigo-500"></i>
+                                <span>+91 22 4590 1200</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-indigo-500"></i>
+                                <span>Local Time: <strong id="time-mumbai">Loading...</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+                        <i data-lucide="building" class="w-12 h-12 text-slate-400 mx-auto mb-4"></i>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-1">TEAM PRESENCE</span>
+                        <h4 class="text-lg font-extrabold text-slate-900 mb-2">Hardware & Delivery</h4>
+                        <p class="text-slate-500 text-xs">Managing localized partner stores and shipping thermal rolls globally across Asia-Pacific corridors.</p>
+                    </div>
+                </div>
+
+                <!-- SF Hub Details -->
+                <div id="content-sf" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-3 h-3 bg-indigo-500 rounded-full animate-ping"></span>
+                            <h3 class="text-xl font-bold text-slate-900">San Francisco R&D (Americas)</h3>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Based right in downtown San Francisco, this office houses our core engineering crew and cloud specialists. This is where the React/Swift architecture is forged.
+                        </p>
+                        <div class="space-y-3 font-mono text-xs text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-indigo-500"></i>
+                                <span>Market St, San Francisco, CA 94103</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-4 h-4 text-indigo-500"></i>
+                                <span>+1 415 555 0192</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-indigo-500"></i>
+                                <span>Local Time: <strong id="time-sf">Loading...</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+                        <i data-lucide="cpu" class="w-12 h-12 text-slate-400 mx-auto mb-4"></i>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-1">TEAM PRESENCE</span>
+                        <h4 class="text-lg font-extrabold text-slate-900 mb-2">Cloud Core & APIs</h4>
+                        <p class="text-slate-500 text-xs">Refining BLE low-latency drivers, managing core AWS instances, and planning developer platforms.</p>
+                    </div>
+                </div>
+
+                <!-- London Hub Details -->
+                <div id="content-london" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-3 h-3 bg-amber-500 rounded-full animate-ping"></span>
+                            <h3 class="text-xl font-bold text-slate-900">London Distribution (Europe)</h3>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Our primary European hub is located in dynamic tech hubs of London. This office operates closely with our retail and wholesale distribution networks.
+                        </p>
+                        <div class="space-y-3 font-mono text-xs text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-indigo-500"></i>
+                                <span>Shoreditch High St, London E1 6JE, UK</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-4 h-4 text-indigo-500"></i>
+                                <span>+44 20 7946 0958</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-indigo-500"></i>
+                                <span>Local Time: <strong id="time-london">Loading...</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+                        <i data-lucide="globe" class="w-12 h-12 text-slate-400 mx-auto mb-4"></i>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-1">TEAM PRESENCE</span>
+                        <h4 class="text-lg font-extrabold text-slate-900 mb-2">SaaS Enterprise Sales</h4>
+                        <p class="text-slate-500 text-xs">Securing custom paper agreements, managing billing frameworks, and coordinating European dispatch nodes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-24 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">STILL CURIOUS?</span>
+                <h2 class="text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
+                <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">Quick support metrics before starting custom API calls.</p>
+            </div>
+
+            <!-- Interactive Accordion Stack -->
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(1)" class="w-full text-left p-6 flex justify-between items-center outline-none">
+                        <h4 class="font-bold text-slate-900 text-sm md:text-base">Can I custom brand the thermal paper backings?</h4>
+                        <span id="faq-icon-1" class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform duration-300"><i data-lucide="plus" class="w-4 h-4"></i></span>
+                    </button>
+                    <div id="faq-content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-slate-500 text-xs md:text-sm leading-relaxed border-t border-gray-50 bg-slate-50/50">
+                            Absolutely! For wholesale orders above 500 units, ConvaPDF offers complete customization services. We can print your company's logo, return policies, or custom promotional QR codes directly onto the paper backing of each roll. Contact our sales team using the selection form above to receive structural specifications templates.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(2)" class="w-full text-left p-6 flex justify-between items-center outline-none">
+                        <h4 class="font-bold text-slate-900 text-sm md:text-base">What APIs are supported for the Cloud Suite?</h4>
+                        <span id="faq-icon-2" class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform duration-300"><i data-lucide="plus" class="w-4 h-4"></i></span>
+                    </button>
+                    <div id="faq-content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-slate-500 text-xs md:text-sm leading-relaxed border-t border-gray-50 bg-slate-50/50">
+                            Our Cloud Suite utilizes standardized REST endpoints accepting clean JSON formatting. We also support native webhooks for fast Shopify, Stripe, WooCommerce, and Salesforce triggers. This allows your checkout systems to dynamically issue print actions to remote warehouse terminal devices automatically.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(3)" class="w-full text-left p-6 flex justify-between items-center outline-none">
+                        <h4 class="font-bold text-slate-900 text-sm md:text-base">Do you ship the printers internationally?</h4>
+                        <span id="faq-icon-3" class="p-1 rounded bg-slate-100 text-slate-600 transform transition-transform duration-300"><i data-lucide="plus" class="w-4 h-4"></i></span>
+                    </button>
+                    <div id="faq-content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-slate-500 text-xs md:text-sm leading-relaxed border-t border-gray-50 bg-slate-50/50">
+                            Yes! We ship our pocket hardware units, multi-roll bundles, and custom logistics components worldwide. Depending on your hub location, international deliveries transit via DHL Express or FedEx lanes and typically arrive in 3 to 7 business days with transparent cloud-synced customs logs.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- In-app interactive Notification framework -->
+    <div id="notify-popup" class="fixed bottom-6 right-6 bg-slate-950 text-white rounded-2xl px-5 py-3 shadow-2xl border border-slate-800 text-xs font-semibold tracking-wide hidden items-center gap-2.5 z-50 animate-bounce">
+        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-ping"></div>
+        <span id="notify-msg">Message copied successfully!</span>
+    </div>
+
+    <!-- Footer Block -->
+        <footer class="py-16 border-t border-gray-100 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 pt-1">
+                    <div class="flex items-center mb-4">
+                        <img src="Assets/logo crop.png" alt="ConvaPDF Logo" style="height: 30px; width: auto; display: block;" />
+                    </div>
+                    <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                        A production-ready retail application paired with inkless thermal hardware, transforming smartphones into high-speed billing terminals with professional formatting and quick-connect printer utilities.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Product</h5>
+                    <ul class="space-y-2">
+                        <li><a href="hardware.html" class="hover:text-black">Hardware</a></li>
+                        <li><a href="ios.html" class="hover:text-black">iOS App</a></li>
+                        <li><a href="android.html" class="hover:text-black">Android App</a></li>
+                        <li><a href="cloudsuite.html" class="hover:text-black">Cloud Suite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-black">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-black">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Support</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-black">Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-black">Contact Us</a></li>
+                        <li><a href="privacypolicy.html" class="hover:text-black">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2026 ConvaPDF.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Global Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // --- Custom Notifications Engine ---
+        function showNotification(msg) {
+            const popup = document.getElementById('notify-popup');
+            document.getElementById('notify-msg').innerText = msg;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 3000);
+        }
+
+        // --- Interactive FAQ Accordion Trigger ---
+        function toggleFAQ(idx) {
+            const content = document.getElementById(`faq-content-${idx}`);
+            const icon = document.getElementById(`faq-icon-${idx}`);
+            
+            if (content.style.maxHeight === '0px' || !content.style.maxHeight) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.classList.add('rotate-45');
+                icon.classList.remove('bg-slate-100');
+                icon.classList.add('bg-slate-900', 'text-white');
+            } else {
+                content.style.maxHeight = '0px';
+                icon.classList.remove('rotate-45');
+                icon.classList.add('bg-slate-100');
+                icon.classList.remove('bg-slate-900', 'text-white');
+            }
+        }
+
+        // --- Interactive Locations Switcher ---
+        function switchLocation(activeId) {
+            const locations = ['mumbai', 'sf', 'london'];
+            
+            locations.forEach(loc => {
+                const button = document.getElementById(`tab-${loc}`);
+                const section = document.getElementById(`content-${loc}`);
+                
+                if (loc === activeId) {
+                    button.className = "px-5 py-2.5 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-md";
+                    section.classList.remove('hidden');
+                    section.classList.add('grid');
+                } else {
+                    button.className = "px-5 py-2.5 rounded-full text-xs font-bold bg-[#fafafa] text-slate-500 border border-gray-200 hover:border-black transition-all";
+                    section.classList.add('hidden');
+                    section.classList.remove('grid');
+                }
+            });
+        }
+
+        // Clock tracking functions for localized office hours
+        function updateOfficeClocks() {
+            const mumbaiFormat = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+            const sfFormat = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+            const londonFormat = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+
+            const elementMumbai = document.getElementById('time-mumbai');
+            const elementSf = document.getElementById('time-sf');
+            const elementLondon = document.getElementById('time-london');
+
+            if (elementMumbai) elementMumbai.innerText = mumbaiFormat.format(new Date());
+            if (elementSf) elementSf.innerText = sfFormat.format(new Date());
+            if (elementLondon) elementLondon.innerText = londonFormat.format(new Date());
+        }
+        setInterval(updateOfficeClocks, 1000);
+        updateOfficeClocks();
+
+        // --- Interactive Thermal Receipt Generator ---
+        let currentTicketId = "";
+
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+
+            const senderName = document.getElementById('contact-name').value.trim();
+            const senderEmail = document.getElementById('contact-email').value.trim();
+            const inquiryType = document.getElementById('contact-type').value;
+            const serialNo = document.getElementById('contact-serial').value.trim() || 'NONE';
+            const messageText = document.getElementById('contact-message').value.trim();
+
+            // Format dynamic elements on mock thermal receipt
+            currentTicketId = `CP-TICKET-${Math.floor(10000 + Math.random() * 90000)}`;
+            document.getElementById('receipt-ticket-no').innerText = `#${currentTicketId}`;
+            document.getElementById('receipt-name').innerText = senderName;
+            document.getElementById('receipt-email').innerText = senderEmail;
+            document.getElementById('receipt-route').innerText = inquiryType;
+            document.getElementById('receipt-serial').innerText = serialNo;
+            document.getElementById('receipt-message').innerText = `"${messageText}"`;
+
+            // Setup dynamic date
+            const currentDate = new Date().toISOString().split('T')[0];
+            document.getElementById('receipt-date').innerText = currentDate;
+
+            // Hide standby panel, slide out printed paper receipt
+            document.getElementById('printer-empty-msg').classList.add('hidden');
+            const receipt = document.getElementById('printer-receipt');
+            receipt.classList.remove('hidden');
+            
+            // Show action controls
+            document.getElementById('receipt-actions').classList.remove('hidden');
+            document.getElementById('receipt-actions').classList.add('flex');
+
+            showNotification("Support Ticket printed successfully!");
+        }
+
+        function copyReceiptCode() {
+            if (!currentTicketId) return;
+            
+            // Helper function to safely copy text to clipboard inside Canvas environment
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = currentTicketId;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            showNotification(`Copied ticket ID: ${currentTicketId}`);
+        }
+
+        function resetPrinter() {
+            // Reset contact form
+            document.getElementById('contact-form').reset();
+
+            // Revert visual states
+            document.getElementById('printer-receipt').classList.add('hidden');
+            document.getElementById('receipt-actions').classList.add('hidden');
+            document.getElementById('receipt-actions').classList.remove('flex');
+            document.getElementById('printer-empty-msg').classList.remove('hidden');
+
+            showNotification("Printer container cleared and reset!");
+        }
+    </script>
+</body>
+</html>

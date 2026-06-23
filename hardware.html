@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware | ConvaPDF Thermal Printing Ecosystem</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        .card-subtle {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .card-subtle:hover {
+            border-color: #111827;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .brand-logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+        .spec-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #111827;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .spec-dot:hover, .spec-dot.active {
+            transform: scale(1.3);
+            background-color: #f97316;
+            box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                   <img src="Assets/logo crop.png" alt="ConvaPDF Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">     
+                   <span style="display:none;" class="font-bold text-xl tracking-tight text-slate-900">ConvaPDF</span>
+                </a>
+            </div>
+            
+            <button class="block md:hidden p-2 text-slate-700 hover:text-black" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                <a href="#" class="text-black border-b-2 border-slate-950 pb-1 transition-colors">Hardware</a>
+                <a href="index.html#software" class="hover:text-black transition-colors">The App</a>
+                <a href="index.html#pricing" class="hover:text-black transition-colors">Pricing</a>
+                <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+                <a href="index.html#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-black transition-all">Get Started</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 flex flex-col space-y-4 font-medium text-sm text-slate-600">
+            <a href="index.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Home</a>
+            <a href="#" class="text-black transition-colors" onclick="toggleMobileMenu()">Hardware</a>
+            <a href="index.html#software" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">The App</a>
+            <a href="index.html#pricing" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Pricing</a>
+            <a href="about.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">About Us</a>
+            <a href="index.html#contact" class="w-full text-center px-5 py-2.5 bg-slate-900 text-white rounded-xl hover:bg-black transition-all block" onclick="toggleMobileMenu()">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 md:pt-40 pb-20 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 max-w-full text-center">
+                <span>Precision Engineering & Design</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                Designed to Fit in Your Pocket, <br><span class="gradient-text">Built to Power Your Business.</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
+                The ConvaPDF pocket printer merges high-efficiency thermal architecture with clean minimalism. No ribbons, no ink, zero-lag Bluetooth pairing, and standard fast-charging compatibility.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="index.html#pricing" class="px-6 py-3 bg-slate-900 text-white rounded-xl hover:bg-black transition-all text-sm font-semibold">Buy Starter Bundle</a>
+                <a href="#interactive-specs" class="px-6 py-3 bg-white border border-gray-200 text-slate-700 hover:border-black rounded-xl transition-all text-sm font-semibold">Explore Specs</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive-specs" class="py-16 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Anatomy of ConvaPDF</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Click the interactive points on the printer to discover its internal specifications and advanced mechanical core.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Visual Component Explorer -->
+                <div class="lg:col-span-7 flex justify-center items-center bg-slate-50 rounded-3xl p-8 border border-gray-200/60 relative min-h-[400px]">
+                    <div class="relative w-[280px] h-[340px] md:w-[320px] md:h-[380px]">
+                        <!-- Product Main Graphic -->
+                        <img src="Assets/portable-printer.png" alt="ConvaPDF Hardware Highlight" class="w-full h-full object-contain drop-shadow-2xl mx-auto" />
+                        
+                        <!-- Interactive Hotspots -->
+                        <div id="hotspot-head" class="spec-dot active" style="top: 15%; left: 55%;" onclick="showSpec('head')"></div>
+                        <div id="hotspot-battery" class="spec-dot" style="top: 60%; left: 35%;" onclick="showSpec('battery')"></div>
+                        <div id="hotspot-power" class="spec-dot" style="top: 73%; left: 50%;" onclick="showSpec('power')"></div>
+                        <div id="hotspot-housing" class="spec-dot" style="top: 45%; left: 75%;" onclick="showSpec('housing')"></div>
+                    </div>
+                </div>
+
+                <!-- Specs Details Panel -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-sm h-full flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2" id="spec-category">PRINTING ENGINE</div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4" id="spec-title">Japanese Thermal Printhead</h3>
+                            <p class="text-slate-500 text-sm md:text-base leading-relaxed mb-6" id="spec-description">
+                                Optimized with a clean 203 DPI micro-heating array. Requires zero toner cartridges or transfer ribbons, instead utilizing high-contrast heat transfer direct to paper elements for perfect black levels.
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Specification Metrics</h5>
+                            <div class="grid grid-cols-2 gap-4" id="spec-metrics">
+                                <div>
+                                    <span class="block text-xs text-slate-400">Resolution</span>
+                                    <span class="text-lg font-bold text-slate-900">203 DPI (8 dots/mm)</span>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400">Print Lifetime</span>
+                                    <span class="text-lg font-bold text-slate-900">Over 50 Kilometers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Engineered for Performance</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Every line and microchip is tuned for seamless functionality, no matter the workspace constraints.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <img src="Assets/inkless.png" alt="Inkless Icon" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Inkless Thermal</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Frictionless printing using premium heat-activated micro-elements. Eliminates ink stains, smudge cycles, and messy refills permanently.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <img src="Assets/battery.png" alt="Battery Icon" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Rapid USB-C Charging</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Integrated high-capacity rechargeable core. Up to 100 meters of continuous paper rolls printed on a single charge with standby for 30+ days.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <img src="Assets/Bluetooth.png" alt="Bluetooth Icon" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Bluetooth 5.2 Core</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Low-energy, high-bandwidth connection layer. Connects to iOS or Android units instantly for high-speed PDF rendering in seconds.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <div class="w-12 h-12 flex items-center justify-start text-slate-900">
+                                <i data-lucide="scale" class="w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Ultralight Body</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Weighs under 250 grams. Enclosed in a scratch-resistant polycarbonate case designed to survive drops, rugged deliveries, and high workspace impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Zero Friction Paper Loading</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">No complicated gears, rollers, or mechanical paths. Reload the printer easily in under 5 seconds.</p>
+            </div>
+
+            <!-- Paper Loader Steps Simulator -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-5 flex flex-col space-y-4">
+                    <button onclick="showStep(1)" id="step-btn-1" class="text-left p-5 rounded-2xl border-2 border-black bg-white transition-all">
+                        <div class="font-bold text-sm text-slate-400 mb-1">STEP 1</div>
+                        <h4 class="font-bold text-base text-slate-900">Pop the Lid Open</h4>
+                        <p class="text-slate-500 text-xs mt-1">Press down lightly on the quick-release latch on the top casing to swing the paper tray hood open.</p>
+                    </button>
+                    <button onclick="showStep(2)" id="step-btn-2" class="text-left p-5 rounded-2xl border border-gray-100 bg-white hover:border-gray-300 transition-all">
+                        <div class="font-bold text-sm text-slate-400 mb-1">STEP 2</div>
+                        <h4 class="font-bold text-base text-slate-900">Place the Roll Inside</h4>
+                        <p class="text-slate-500 text-xs mt-1">Drop in any standard 57mm wide thermal paper or sticker label roll with the glossy print side facing out.</p>
+                    </button>
+                    <button onclick="showStep(3)" id="step-btn-3" class="text-left p-5 rounded-2xl border border-gray-100 bg-white hover:border-gray-300 transition-all">
+                        <div class="font-bold text-sm text-slate-400 mb-1">STEP 3</div>
+                        <h4 class="font-bold text-base text-slate-900">Close and Pull Through</h4>
+                        <p class="text-slate-500 text-xs mt-1">Leave a small portion of paper hanging outside the tear-blade, press the lid down firmly, and print instantly.</p>
+                    </button>
+                </div>
+                
+                <div class="md:col-span-7 bg-slate-50 rounded-3xl p-8 border border-gray-200/60 flex items-center justify-center min-h-[340px]">
+                    <!-- Step graphics using highly polished SVG representations -->
+                    <div class="text-center space-y-6" id="step-display">
+                        <div class="flex justify-center">
+                            <!-- Pop Lid SVG -->
+                            <svg class="w-36 h-36" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="25" y="50" width="70" height="45" rx="8" fill="#FFFFFF" stroke="#111827" stroke-width="3"/>
+                                <path d="M25 55C25 45 35 35 60 35C85 35 95 45 95 55" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 2" />
+                                <path d="M50 30L60 15L70 30" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="95" cy="65" r="4" fill="#111827" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900">Step 1: Open the Latches</h4>
+                            <p class="text-sm text-slate-500 max-w-sm mx-auto mt-2">The robust hinge mechanism automatically stops at a 90-degree angle for convenient roll placement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-50 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Legacy vs. ConvaPDF</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">See how portable inkless engineering stacks up against traditional retail receipt and desk terminals.</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-white text-sm">
+                            <th class="p-5 font-semibold">Features</th>
+                            <th class="p-5 font-semibold">Traditional Printers</th>
+                            <th class="p-5 font-semibold text-orange-400 flex items-center gap-1">
+                                <i data-lucide="check" class="w-4 h-4"></i> ConvaPDF Ecosystem
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm">
+                        <tr>
+                            <td class="p-5 font-medium text-slate-900">Consumables Required</td>
+                            <td class="p-5 text-slate-500">Ink Cartridges, Toner, Ribbons</td>
+                            <td class="p-5 font-semibold text-slate-900">Thermal Roll Only (0 Ink)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-medium text-slate-900">Form Factor & Mobility</td>
+                            <td class="p-5 text-slate-500">Bulky, Stationed near desks</td>
+                            <td class="p-5 font-semibold text-slate-900">Pocket-sized, Under 250g</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-medium text-slate-900">Connection Options</td>
+                            <td class="p-5 text-slate-500">USB Cables, Complex network setups</td>
+                            <td class="p-5 font-semibold text-slate-900">Wireless Bluetooth 5.2 BLE</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-medium text-slate-900">Maintenance & Overhead</td>
+                            <td class="p-5 text-slate-500">Frequent replacements & servicing</td>
+                            <td class="p-5 font-semibold text-slate-900">Zero Maintenance, long lasting head</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] bg-black text-white">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Complete your portable register setup</h2>
+            <p class="text-slate-400 text-sm md:text-base mb-8 max-w-lg mx-auto">Order your physical printer paired with initial label roles and full cloud suite authorization key today.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#pricing" class="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-gray-100 transition-all text-sm block">See Pricing Options</a>
+            </div>
+        </div>
+    </section>
+
+        <footer class="py-16 border-t border-gray-100 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 pt-1">
+                    <div class="flex items-center mb-4">
+                        <img src="Assets/logo crop.png" alt="ConvaPDF Logo" style="height: 30px; width: auto; display: block;" />
+                    </div>
+                    <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                        A production-ready retail application paired with inkless thermal hardware, transforming smartphones into high-speed billing terminals with professional formatting and quick-connect printer utilities.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Product</h5>
+                    <ul class="space-y-2">
+                        <li><a href="hardware.html" class="hover:text-black">Hardware</a></li>
+                        <li><a href="ios.html" class="hover:text-black">iOS App</a></li>
+                        <li><a href="android.html" class="hover:text-black">Android App</a></li>
+                        <li><a href="cloudsuite.html" class="hover:text-black">Cloud Suite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-black">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-black">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Support</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-black">Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-black">Contact Us</a></li>
+                        <li><a href="privacypolicy.html" class="hover:text-black">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2026 ConvaPDF.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // --- Specs Details Data ---
+        const specDetails = {
+            head: {
+                category: "PRINTING ENGINE",
+                title: "Japanese Thermal Printhead",
+                description: "Optimized with a clean 203 DPI micro-heating array. Requires zero toner cartridges or transfer ribbons, instead utilizing high-contrast heat transfer direct to paper elements for perfect black levels.",
+                metrics: [
+                    { label: "Resolution", val: "203 DPI (8 dots/mm)" },
+                    { label: "Print Lifetime", val: "Over 50 Kilometers" }
+                ]
+            },
+            battery: {
+                category: "POWER DISTRIBUTION",
+                title: "1500mAh Lithium-Poly Core",
+                description: "Equipped with automated power regulation and low standby-draw circuitry. Powers continuous printing operations through multi-roll invoice flows without drops.",
+                metrics: [
+                    { label: "Charge Interface", val: "USB-C Fast Charging" },
+                    { label: "Run Mileage", val: "100+ Meters continuous" }
+                ]
+            },
+            power: {
+                category: "INPUT INTERFACE",
+                title: "One-Touch Smart Key",
+                description: "Single ergonomic physical button for tactile control. Serves as power key, active status LED, and feeds manual line spacing feeds directly on push.",
+                metrics: [
+                    { label: "Action Response", val: "Instant Push Action" },
+                    { label: "Status Indicator", val: "RGB Multi-color LED" }
+                ]
+            },
+            housing: {
+                category: "PROTECTIVE CASING",
+                title: "Shockproof Polycarbonate Casing",
+                description: "Molded from double-layered, fire-resistant polycarbonate. Ergonomically shaped to guarantee structural security during quick outdoor workflows and field drops.",
+                metrics: [
+                    { label: "Drop Protection", val: "Up to 1.5 Meter drop resistance" },
+                    { label: "Weight Volume", val: "Approx. 240 Grams" }
+                ]
+            }
+        };
+
+        function showSpec(part) {
+            // Remove active classes on all dots
+            document.querySelectorAll('.spec-dot').forEach(el => el.classList.remove('active'));
+            // Set clicked dot active
+            document.getElementById(`hotspot-${part}`).classList.add('active');
+
+            const data = specDetails[part];
+            document.getElementById('spec-category').innerText = data.category;
+            document.getElementById('spec-title').innerText = data.title;
+            document.getElementById('spec-description').innerText = data.description;
+
+            // Generate metrics
+            let html = '';
+            data.metrics.forEach(m => {
+                html += `<div>
+                            <span class="block text-xs text-slate-400">${m.label}</span>
+                            <span class="text-lg font-bold text-slate-900">${m.val}</span>
+                         </div>`;
+            });
+            document.getElementById('spec-metrics').innerHTML = html;
+        }
+
+        // --- Paper Loading Step Guide ---
+        const stepDetails = {
+            1: {
+                title: "Step 1: Open the Latches",
+                desc: "The robust hinge mechanism automatically stops at a 90-degree angle for convenient roll placement.",
+                svg: `<svg class="w-36 h-36" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="50" width="70" height="45" rx="8" fill="#FFFFFF" stroke="#111827" stroke-width="3"/>
+                        <path d="M25 55C25 45 35 35 60 35C85 35 95 45 95 55" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 2" />
+                        <path d="M50 30L60 15L70 30" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="95" cy="65" r="4" fill="#111827" />
+                      </svg>`
+            },
+            2: {
+                title: "Step 2: Place the Roll",
+                desc: "Drop the roll directly into the container. There are no sprockets, pins, or alignment components to manage.",
+                svg: `<svg class="w-36 h-36" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="50" width="70" height="45" rx="8" fill="#FFFFFF" stroke="#111827" stroke-width="3"/>
+                        <circle cx="60" cy="72" r="18" fill="#FFFFFF" stroke="#111827" stroke-width="3" />
+                        <circle cx="60" cy="72" r="6" fill="#F97316" />
+                        <path d="M60 15V45" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 2"/>
+                      </svg>`
+            },
+            3: {
+                title: "Step 3: Pull Paper & Close",
+                desc: "Leave a centimeter of excess margin outside, secure the latch box, and you are ready to begin printing.",
+                svg: `<svg class="w-36 h-36" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="50" width="70" height="45" rx="8" fill="#FFFFFF" stroke="#111827" stroke-width="3"/>
+                        <path d="M25 52C25 48 35 48 60 48C85 48 95 48 95 52" stroke="#111827" stroke-width="4" />
+                        <path d="M40 48L35 15L85 15" stroke="#F97316" stroke-width="3" stroke-linejoin="round" />
+                        <line x1="45" y1="24" x2="75" y2="24" stroke="#F97316" stroke-width="2"/>
+                        <line x1="45" y1="32" x2="65" y2="32" stroke="#F97316" stroke-width="2"/>
+                      </svg>`
+            }
+        };
+
+        function showStep(stepNum) {
+            // Remove styling classes from buttons
+            for(let i=1; i<=3; i++) {
+                const btn = document.getElementById(`step-btn-${i}`);
+                btn.className = "text-left p-5 rounded-2xl border border-gray-100 bg-white hover:border-gray-300 transition-all";
+            }
+            // Add focus styling classes to active button
+            document.getElementById(`step-btn-${stepNum}`).className = "text-left p-5 rounded-2xl border-2 border-black bg-white transition-all";
+
+            // Update interactive content box
+            const activeStep = stepDetails[stepNum];
+            document.getElementById('step-display').innerHTML = `
+                <div class="flex justify-center">${activeStep.svg}</div>
+                <div>
+                    <h4 class="text-lg font-bold text-slate-900">${activeStep.title}</h4>
+                    <p class="text-sm text-slate-500 max-w-sm mx-auto mt-2">${activeStep.desc}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

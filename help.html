@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | ConvaPDF Thermal Printing Ecosystem</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        .card-subtle {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .card-subtle:hover {
+            border-color: #111827;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .brand-logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <!-- Fixed Glassmorphic Navigation Menu -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                   <img src="Assets/logo crop.png" alt="ConvaPDF Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">     
+                   <span style="display:none;" class="font-bold text-xl tracking-tight text-slate-900">ConvaPDF</span>
+                </a>
+            </div>
+            
+            <button class="block md:hidden p-2 text-slate-700 hover:text-black" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                <a href="hardware.html" class="hover:text-black transition-colors">Hardware</a>
+                <a href="android.html" class="hover:text-black transition-colors">Android App</a>
+                <a href="ios.html" class="hover:text-black transition-colors">iOS App (Beta)</a>
+                <a href="cloud.html" class="hover:text-black transition-colors">Cloud Suite</a>
+                <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+                <a href="careers.html" class="hover:text-black transition-colors">Careers</a>
+                <a href="contact.html" class="hover:text-black transition-colors">Contact</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 flex flex-col space-y-4 font-medium text-sm text-slate-600">
+            <a href="index.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Home</a>
+            <a href="hardware.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Hardware</a>
+            <a href="android.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Android App</a>
+            <a href="ios.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">iOS App (Beta)</a>
+            <a href="cloud.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Cloud Suite</a>
+            <a href="about.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">About Us</a>
+            <a href="careers.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Careers</a>
+            <a href="contact.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Dynamic Search Section -->
+    <section class="relative pt-32 md:pt-40 pb-16 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
+                <span>Self-Service Knowledge Hub</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                How Can We Help <br><span class="gradient-text">Your Print Workflows?</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Search our comprehensive manuals, troubleshoot Bluetooth hardware handshakes, or check device health online.
+            </p>
+
+            <!-- Search Console Input -->
+            <div class="relative max-w-xl mx-auto mb-8">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </div>
+                <input type="text" id="kb-search-input" onkeyup="filterArticles()" placeholder="Search articles (e.g., 'pairing', 'faint text', 'paper size')..." class="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-2xl text-slate-800 placeholder-slate-400 outline-none focus:ring-2 ring-slate-900/10 focus:border-slate-900 transition-all shadow-sm text-sm">
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="flex justify-center gap-2 flex-wrap" id="pill-filters">
+                <button onclick="filterCategory('all')" id="pill-all" class="px-4 py-2 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-sm">All Topics</button>
+                <button onclick="filterCategory('printer')" id="pill-printer" class="px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Hardware Printer</button>
+                <button onclick="filterCategory('app')" id="pill-app" class="px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Mobile Apps</button>
+                <button onclick="filterCategory('cloud')" id="pill-cloud" class="px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Cloud Console & APIs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results / Knowledge Articles Grid -->
+    <section class="py-6 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Dynamic Results Count -->
+            <div class="mb-6 flex justify-between items-center text-sm text-slate-500">
+                <span id="results-count">Showing 6 articles</span>
+                <span class="text-xs font-mono bg-slate-100 px-2 py-1 rounded">Last updated: Today</span>
+            </div>
+
+            <!-- Articles Stack -->
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="printer">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-orange-100 text-orange-800 text-[10px] font-bold rounded-full uppercase">Hardware</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Paper Coming Out Blank?</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">If the printer feeds paper but prints absolutely nothing, verify the roll is installed correctly with the thermal chemical-coated side facing outward.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('blank-paper')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="printer">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-orange-100 text-orange-800 text-[10px] font-bold rounded-full uppercase">Hardware</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Understanding Status Light Codes</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Decode flashing LED patterns: Static green is ready, flashing yellow indicates paper roll is empty, and static red means charging or head temperature anomaly.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('light-codes')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="app">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full uppercase">Apps</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Troubleshooting BLE Connection</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Ensure location services and Bluetooth are toggled on. Android devices require location authorization to scan for Low Energy beacons.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('ble-trouble')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="app">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full uppercase">Apps</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Faint or Low-Contrast Prints</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Adjust your density print profile in the ConvaPDF app options from standard to high-contrast mode for clear invoices and high-density labels.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('faint-print')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="cloud">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-[10px] font-bold rounded-full uppercase">Cloud & API</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Setting Up Your First Webhook</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Configure Stripe or Shopify webhooks to automatically forward PDF invoice streams to specific registered remote warehouse terminal queues.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('webhook-guide')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="p-6 rounded-3xl card-subtle bg-white border border-gray-200 flex flex-col justify-between" data-category="cloud">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-[10px] font-bold rounded-full uppercase">Cloud & API</span>
+                        </div>
+                        <h3 class="font-bold text-slate-950 text-base mb-2">Resolving Timeout Codes</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">If API calls return 408 Timeout response payloads, ensure the target ConvaPDF device is online and registered within the Cloud Hub panel active fleet status.</p>
+                    </div>
+                    <button onclick="toggleArticleModal('timeout-guide')" class="mt-6 text-xs font-bold text-slate-900 flex items-center gap-1 hover:gap-2 transition-all self-start">
+                        Read Guide <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Empty state for search -->
+            <div id="no-articles-found" class="hidden text-center py-24 bg-white border border-gray-200 rounded-3xl mt-6">
+                <i data-lucide="help-circle" class="w-12 h-12 text-slate-300 mx-auto mb-4"></i>
+                <h3 class="font-bold text-slate-900 text-lg">No Articles Found</h3>
+                <p class="text-slate-400 text-sm mt-1 max-w-sm mx-auto">We couldn't match your keywords. Try searching for broader terms like "pairing", "blank", "webhook" or "LED".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Troubleshooter Segment -->
+    <section class="py-24 px-6 bg-slate-100 border-y border-gray-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest block mb-1">INTERACTIVE TROUBLESHOOTER</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Self-Service Diagnostics Wizard</h2>
+                <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">Select your active ecosystem component and describe the symptom for an immediate technical walkthrough.</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <!-- Selector Left Column (Takes 5 cols) -->
+                <div class="md:col-span-5 space-y-6">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">1. Select Product Hub</label>
+                        <select id="trouble-hub" onchange="updateSymptomOptions()" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 cursor-pointer text-slate-800">
+                            <option value="printer">ConvaPDF Thermal Printer (Hardware)</option>
+                            <option value="app">ConvaPDF Mobile Suite (Android/iOS)</option>
+                            <option value="cloud">Cloud Integration & Webhook APIs</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">2. What issue are you experiencing?</label>
+                        <select id="trouble-symptom" onchange="resolveTroubleshootingDiagnostic()" class="w-full text-sm p-4 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 cursor-pointer text-slate-800">
+                            <!-- Populated Dynamically -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Diagnostics Dashboard Output (Takes 7 cols) -->
+                <div class="md:col-span-7 bg-[#fafafa] border border-gray-200 rounded-2xl p-6 relative min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-200 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-indigo-500 rounded-full animate-ping"></span>
+                                <span class="text-xs font-bold text-slate-700 tracking-wider uppercase font-mono">DIAGNOSTIC ENGINE</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-slate-400" id="diagnostic-code">CODE: DIAG-000</span>
+                        </div>
+
+                        <!-- Walkthrough Instructions Area -->
+                        <div id="diagnostic-output" class="space-y-4">
+                            <!-- Dynamic checklist steps inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Footer Help fallback -->
+                    <div class="pt-6 border-t border-gray-200 mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <span class="text-[10px] text-slate-400">Still stuck? Contact local engineering dispatch.</span>
+                        <a href="contact.html" class="px-4 py-2 bg-slate-900 hover:bg-black text-white rounded-lg text-xs font-bold transition-all inline-block">Open Ticket</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulated Wireless Fleet Diagnostician Checker -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-black text-white rounded-[2.5rem] p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7">
+                        <span class="text-[10px] font-bold text-indigo-400 tracking-widest uppercase block mb-1">ONLINE REGISTRATION CHECKUP</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Query Your Terminal Health</h2>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed mb-6">Enter your printer unit's unique Serial ID (located on the base casing, e.g., #CP-9040 or #CP-5011) to inspect real-time sync metrics from our active server registry.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 max-w-md">
+                            <input type="text" id="terminal-serial-id" placeholder="e.g. #CP-9020" class="flex-1 px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-white outline-none focus:ring-2 ring-indigo-500/50 text-xs">
+                            <button onclick="checkTerminalStatus()" class="px-6 py-3.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="cpu" class="w-4 h-4 animate-spin hidden" id="status-spinner"></i> Diagnostic Check
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output Stats Panel (3D card mockup) -->
+                    <div class="md:col-span-5 bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4 font-mono text-xs">
+                        <div class="flex justify-between pb-2 border-b border-white/10">
+                            <span class="text-slate-400 text-[10px]">Registry Status:</span>
+                            <span id="stat-reg" class="text-slate-400 font-bold">Awaiting ID</span>
+                        </div>
+                        <div class="flex justify-between pb-2 border-b border-white/10">
+                            <span class="text-slate-400 text-[10px]">Ping Response:</span>
+                            <span id="stat-ping" class="text-slate-400 font-bold">-- ms</span>
+                        </div>
+                        <div class="flex justify-between pb-2 border-b border-white/10">
+                            <span class="text-slate-400 text-[10px]">Battery Cycles:</span>
+                            <span id="stat-battery" class="text-slate-400 font-bold">-- / --</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400 text-[10px]">Mileage Used:</span>
+                            <span id="stat-mileage" class="text-slate-400 font-bold">-- meters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Article Walkthrough Modal (Hidden by Default) -->
+    <div id="article-modal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm z-50 hidden justify-center items-center p-4">
+        <div class="bg-white border border-gray-200 rounded-3xl w-full max-w-2xl p-6 md:p-10 shadow-2xl relative overflow-y-auto max-h-[90vh]">
+            <!-- Close Button -->
+            <button onclick="toggleArticleModal()" class="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-100 text-slate-500 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Dynamic Article Content Target -->
+            <div id="modal-article-container" class="space-y-6">
+                <!-- Populated dynamically via Javascript based on target -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification pop -->
+    <div id="notify-popup" class="fixed bottom-6 right-6 bg-slate-950 text-white rounded-2xl px-5 py-3 shadow-2xl border border-slate-800 text-xs font-semibold tracking-wide hidden items-center gap-2.5 z-50 animate-bounce">
+        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-ping"></div>
+        <span id="notify-msg">Diagnostic verification completed successfully!</span>
+    </div>
+
+    <!-- Global Footer -->
+<footer class="py-16 border-t border-gray-100 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 pt-1">
+                    <div class="flex items-center mb-4">
+                        <img src="Assets/logo crop.png" alt="ConvaPDF Logo" style="height: 30px; width: auto; display: block;" />
+                    </div>
+                    <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                        A production-ready retail application paired with inkless thermal hardware, transforming smartphones into high-speed billing terminals with professional formatting and quick-connect printer utilities.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Product</h5>
+                    <ul class="space-y-2">
+                        <li><a href="hardware.html" class="hover:text-black">Hardware</a></li>
+                        <li><a href="ios.html" class="hover:text-black">iOS App</a></li>
+                        <li><a href="android.html" class="hover:text-black">Android App</a></li>
+                        <li><a href="cloudsuite.html" class="hover:text-black">Cloud Suite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-black">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-black">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Support</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-black">Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-black">Contact Us</a></li>
+                        <li><a href="privacypolicy.html" class="hover:text-black">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2026 ConvaPDF.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Start Lucide
+        lucide.createIcons();
+
+        // Responsive Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // --- Custom Notifications Engine ---
+        function showNotification(msg) {
+            const popup = document.getElementById('notify-popup');
+            document.getElementById('notify-msg').innerText = msg;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 3000);
+        }
+
+        // --- Live Knowledge Base Dynamic Search ---
+        let currentSelectedCategory = "all";
+
+        function filterCategory(cat) {
+            currentSelectedCategory = cat;
+            
+            // Highlight target pill
+            const categories = ['all', 'printer', 'app', 'cloud'];
+            categories.forEach(item => {
+                const button = document.getElementById(`pill-${item}`);
+                if (item === cat) {
+                    button.className = "px-4 py-2 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-sm";
+                } else {
+                    button.className = "px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all";
+                }
+            });
+
+            filterArticles();
+        }
+
+        function filterArticles() {
+            const query = document.getElementById('kb-search-input').value.toLowerCase().trim();
+            const grid = document.getElementById('articles-grid');
+            const cards = grid.children;
+            let visibleCount = 0;
+
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const cat = card.getAttribute('data-category');
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+
+                const categoryMatch = (currentSelectedCategory === "all" || cat === currentSelectedCategory);
+                const queryMatch = (title.includes(query) || desc.includes(query));
+
+                if (categoryMatch && queryMatch) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            }
+
+            document.getElementById('results-count').innerText = `Showing ${visibleCount} article${visibleCount !== 1 ? 's' : ''}`;
+            
+            const emptyState = document.getElementById('no-articles-found');
+            if (visibleCount === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        // --- Article Modal Engine ---
+        const articleDatabase = {
+            'blank-paper': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-orange-100 text-orange-800 text-[10px] font-bold rounded-full uppercase">Thermal Hardware</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">How to Fix: Paper Coming Out Blank</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Mechanical</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100">
+                    <p>Pocket thermal printers do not use cartridge inks or lasers. Instead, they rely on a localized heating element (thermal head) to activate special heat-sensitive dyes in the paper surface.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Step 1: Check Thermal Paper Orientation</h4>
+                    <p>Thermal paper is coated on exactly **one side**. If you roll the paper out backwards, the heating printhead will come in contact with the standard un-coated protective backing, causing blank output streams.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Step 2: Perform the Scratch Test</h4>
+                    <p>Unroll a small section of your thermal paper. Quickly run a fingernail or a rigid coin across the surface. If a black streak appears, that side is correctly coated. Install the roll so the streak-capable side is wrapped facing the primary print head mechanism.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Step 3: Clear Debris</h4>
+                    <p>Dust or adhesive residue on the heat head can obstruct correct energy transfers. Dip a clean cotton swab in 90% Isopropyl Alcohol and gently clean the horizontal glass line in the slot mouth. Allow it to air dry for 60 seconds before closing the casing.</p>
+                </div>
+            `,
+            'light-codes': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-orange-100 text-orange-800 text-[10px] font-bold rounded-full uppercase">Thermal Hardware</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">Understanding Status Light LED Codes</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Interface</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100 font-mono text-xs">
+                    <div class="p-4 bg-slate-50 border border-gray-100 rounded-xl space-y-3">
+                        <div class="flex gap-4">
+                            <span class="text-emerald-500 font-bold">● SOLID GREEN</span>
+                            <span class="text-slate-600">Idle standby. The device has synced BLE, holding ample charge, ready to issue print commands.</span>
+                        </div>
+                        <div class="flex gap-4 border-t border-slate-200/50 pt-2">
+                            <span class="text-amber-500 font-bold">● FLASHING YELLOW</span>
+                            <span class="text-slate-600">The roll compartment cover is open, or the printer run out of standard 57mm paper rolls. Refill immediately.</span>
+                        </div>
+                        <div class="flex gap-4 border-t border-slate-200/50 pt-2">
+                            <span class="text-red-500 font-bold">● SOLID RED</span>
+                            <span class="text-slate-600">Device charging sequence, or the heating unit reached critical thermal boundaries. Power off immediately for 5 minutes.</span>
+                        </div>
+                        <div class="flex gap-4 border-t border-slate-200/50 pt-2">
+                            <span class="text-slate-400 font-bold">○ NO LIGHT</span>
+                            <span class="text-slate-600">Deep discharge. Plug the device into a certified 5V/2A USB-C source for 15 minutes to initiate boot loaders.</span>
+                        </div>
+                    </div>
+                </div>
+            `,
+            'ble-trouble': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full uppercase">Mobile Apps</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">Troubleshooting BLE Pairing Loops</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Bluetooth BLE</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100">
+                    <p>Our units utilize Bluetooth Low Energy (BLE). Unlike standard audio speaker systems, BLE devices do not pair directly inside your operating system's general Bluetooth panel. They must connect directly inside the ConvaPDF application environment.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">1. Toggle Location Services (Android Requirement)</h4>
+                    <p>To safely scan for hardware peripherals, Android OS requires explicit Location Permission grants. If permissions are restricted, the application will query indefinitely. Go to Settings > Apps > ConvaPDF > Permissions and allow location services.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">2. Clear OS Cache Stack</h4>
+                    <p>Occasionally, system Bluetooth controllers hold stale state bindings. Toggle Bluetooth off in your main device drawer, wait 5 seconds, toggle it back on, and run a fresh scan from inside the "The App" pairing module.</p>
+                </div>
+            `,
+            'faint-print': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full uppercase">Mobile Apps</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">Faint or Pixelated Thermal Prints</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Formatting</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100">
+                    <p>Since printing utilizes energy mapping, print intensity relies directly on battery levels and image contrast parameters defined inside your active print queue software.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Option A: Charge the Unit</h4>
+                    <p>When the printer falls below 15% charge, the system limits power flow to prevent sudden system shutdowns, resulting in faint output. Connect to USB-C to ensure optimal printing energy.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Option B: Switch Print Contrast Profiles</h4>
+                    <p>By default, the system prints on the "Balanced Energy" mode. Go to app print properties, locate "Contrast Level", and select "High Density" to increase burn intervals across the thermal array.</p>
+                </div>
+            `,
+            'webhook-guide': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-[10px] font-bold rounded-full uppercase">Cloud Platform</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">Configuring Auto-Print Webhooks</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Integration</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100">
+                    <p>Easily forward real-time events from Shopify, Stripe, or WooCommerce to any physical terminal registered under your business workspace profile.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">1. Obtain Terminal Access Token</h4>
+                    <p>Go to your Cloud Console, select "Fleet Devices", click on the targeted active thermal printer, and copy the generated 32-character terminal token.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">2. Create the Trigger Payload</h4>
+                    <p>Set up your API platform to dispatch JSON objects containing receipt details to:
+                    <code class="block bg-slate-50 border p-3 rounded-lg text-xs font-mono mt-2 text-slate-700">POST https://api.convapdf.com/v1/print-jobs</code>
+                    Include your bearer token in the headers for authentication.</p>
+                </div>
+            `,
+            'timeout-guide': `
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-[10px] font-bold rounded-full uppercase">Cloud Platform</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">Resolving 408 Print Timeout Errors</h2>
+                <p class="text-slate-500 text-xs">Modified: Today | Tech Category: Networks</p>
+                
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed pt-4 border-t border-gray-100">
+                    <p>A 408 response means our cloud relays were unable to deliver the formatted print command to the target hardware device within our 15-second timeout window.</p>
+                    
+                    <h4 class="font-bold text-slate-900 text-sm">Check Connection Relays</h4>
+                    <p>Thermal printers receive cloud instructions through registered Bluetooth smartphone gateways. If the linked smartphone goes offline, drops connection, or closes the background application, print commands will fail. Check device connectivity status under your Cloud Hub fleet dashboard.</p>
+                </div>
+            `
+        };
+
+        function toggleArticleModal(articleId) {
+            const modal = document.getElementById('article-modal');
+            const target = document.getElementById('modal-article-container');
+            
+            if (articleId && articleDatabase[articleId]) {
+                target.innerHTML = articleDatabase[articleId];
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // --- Interactive Diagnostic Wizard Engine ---
+        const troubleshooterSymptomDatabase = {
+            'printer': [
+                { value: 'p-blank', label: 'Paper feeding but output is blank' },
+                { value: 'p-faint', label: 'Printing is too faint to scan or read' },
+                { value: 'p-red', label: 'Red light blinking / overtemp signal' },
+                { value: 'p-jam', label: 'Paper jam / grinding motor sound' }
+            ],
+            'app': [
+                { value: 'a-ble', label: 'Device scans indefinitely without pairing' },
+                { value: 'a-ios', label: 'iOS Beta version asking for TestFlight codes' },
+                { value: 'a-crash', label: 'Application closes abruptly during print calls' }
+            ],
+            'cloud': [
+                { value: 'c-hook', label: 'Webhook print triggers returning 408' },
+                { value: 'c-auth', label: 'Developer API token rejected' },
+                { value: 'c-quota', label: 'Daily cloud print limits reached' }
+            ]
+        };
+
+        const diagnosticResolutions = {
+            'p-blank': {
+                code: 'DIAG-P101',
+                steps: [
+                    'Unroll paper and ensure the glossy thermal-dye layer faces outward toward the printhead.',
+                    'Gently rub a fingernail across the paper. If no dark scratch appears, you are using the wrong non-thermal paper roll.',
+                    'Wipe the primary heating element line with a clean alcohol swab.'
+                ]
+            },
+            'p-faint': {
+                code: 'DIAG-P102',
+                steps: [
+                    'Ensure battery is above 15% charge capacity before issuing deep density print commands.',
+                    'Check application print density setting and select "High Density" print mode.',
+                    'Examine physical thermal head alignment for standard latch closure.'
+                ]
+            },
+            'p-red': {
+                code: 'DIAG-P103',
+                steps: [
+                    'Your hardware unit has triggered local safety thermal protective limits (temp > 65°C).',
+                    'Turn off the power and allow the heating arrays to cool down in idle standby for 5 minutes.',
+                    'Avoid printing long continuous layouts with high-density blacks.'
+                ]
+            },
+            'p-jam': {
+                code: 'DIAG-P104',
+                steps: [
+                    'Open the roll chamber latch and check for folded paper edges or adhesive buildup inside the gear segments.',
+                    'Re-align paper edges flat, keeping a clean 57mm parallel orientation.',
+                    'Do not pull the paper manually while the engine rollers are active.'
+                ]
+            },
+            'a-ble': {
+                code: 'DIAG-A201',
+                steps: [
+                    'Go to your smartphone Settings and verify both Location and Bluetooth are turned ON.',
+                    'Check OS settings to make sure "ConvaPDF" has explicit Location Access Permission.',
+                    'Turn Bluetooth off, wait 3 seconds, turn it on, and pair directly within the app.'
+                ]
+            },
+            'a-ios': {
+                code: 'DIAG-A202',
+                steps: [
+                    'Launch standard TestFlight on your iOS environment.',
+                    'Refer to your iOS Beta onboarding ticket, copy the individual token, and paste it into the TestFlight redemption panel.',
+                    'Submit an inquiry on our contact page if your Beta ticket is inactive.'
+                ]
+            },
+            'a-crash': {
+                code: 'DIAG-A203',
+                steps: [
+                    'Update the ConvaPDF mobile app to the latest version available on Google Play or iOS Beta.',
+                    'Verify the payload size is below 5MB before submitting documents to the layout compiler.',
+                    'Clear localized application cache data and reboot your device.'
+                ]
+            },
+            'c-hook': {
+                code: 'DIAG-C301',
+                steps: [
+                    'Verify the destination printer device is registered, active, and online on your Cloud Console.',
+                    'Double-check authorization bearer tokens passed inside your post header payload variables.',
+                    'Inspect webhook payload arrays to ensure formatting matches standard JSON conventions.'
+                ]
+            },
+            'c-auth': {
+                code: 'DIAG-C302',
+                steps: [
+                    'Confirm your Bearer token matches the key generated inside the Cloud developer tab.',
+                    'If the token is expired or compromised, click "Regenerate Keys" to issue new active credentials.',
+                    'Verify your webhook endpoints are configured to route requests over secure HTTPS paths.'
+                ]
+            },
+            'c-quota': {
+                code: 'DIAG-C303',
+                steps: [
+                    'Standard tiers are limited to 1,000 monthly webhook API conversions.',
+                    'Check usage analytics metrics inside your Cloud Console to inspect active billing tier bounds.',
+                    'Upgrade to our Pro Cloud SaaS tier for unlimited dynamic print streams.'
+                ]
+            }
+        };
+
+        function updateSymptomOptions() {
+            const selectedHub = document.getElementById('trouble-hub').value;
+            const symptomSelector = document.getElementById('trouble-symptom');
+            symptomSelector.innerHTML = '';
+
+            if (troubleshooterSymptomDatabase[selectedHub]) {
+                troubleshooterSymptomDatabase[selectedHub].forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item.value;
+                    opt.innerText = item.label;
+                    symptomSelector.appendChild(opt);
+                });
+            }
+
+            resolveTroubleshootingDiagnostic();
+        }
+
+        function resolveTroubleshootingDiagnostic() {
+            const symptomVal = document.getElementById('trouble-symptom').value;
+            const outputArea = document.getElementById('diagnostic-output');
+            const codeLabel = document.getElementById('diagnostic-code');
+
+            if (diagnosticResolutions[symptomVal]) {
+                const solution = diagnosticResolutions[symptomVal];
+                codeLabel.innerText = `CODE: ${solution.code}`;
+
+                let htmlContent = '<h4 class="font-bold text-slate-900 text-sm mb-3">Suggested Repair Sequence:</h4><ul class="space-y-3">';
+                solution.steps.forEach((step, index) => {
+                    htmlContent += `
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 bg-indigo-100 text-indigo-700 text-xs rounded-full flex items-center justify-center flex-shrink-0 font-bold font-mono">
+                                ${index + 1}
+                            </div>
+                            <span class="text-slate-600 text-xs md:text-sm leading-normal">${step}</span>
+                        </li>
+                    `;
+                });
+                htmlContent += '</ul>';
+                outputArea.innerHTML = htmlContent;
+            } else {
+                codeLabel.innerText = 'CODE: DIAG-000';
+                outputArea.innerHTML = `
+                    <div class="text-center py-12 text-slate-400">
+                        <i data-lucide="help-circle" class="w-8 h-8 mx-auto mb-2 text-slate-300"></i>
+                        <p class="text-xs">Select your segments above to generate an automated troubleshooting walkthrough.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        // Initialize Troubleshooter defaults
+        updateSymptomOptions();
+
+        // --- Simulated Hardware Status Checker ---
+        function checkTerminalStatus() {
+            const rawId = document.getElementById('terminal-serial-id').value.trim();
+            const spinner = document.getElementById('status-spinner');
+            
+            if (!rawId) {
+                showNotification("Please enter a valid Serial ID first!");
+                return;
+            }
+
+            spinner.classList.remove('hidden');
+            showNotification("Polling active server registry for telemetry...");
+
+            // Simulate server lag lookup
+            setTimeout(() => {
+                spinner.classList.add('hidden');
+
+                const cleanId = rawId.toUpperCase();
+                const matchedVal = cleanId.match(/\d+/); // Get numeric components
+                const randomSeed = matchedVal ? parseInt(matchedVal[0]) : Math.floor(Math.random() * 9999);
+
+                const elementReg = document.getElementById('stat-reg');
+                const elementPing = document.getElementById('stat-ping');
+                const elementBattery = document.getElementById('stat-battery');
+                const elementMileage = document.getElementById('stat-mileage');
+
+                if (randomSeed % 3 === 0) {
+                    elementReg.className = "text-emerald-500 font-bold uppercase";
+                    elementReg.innerText = "ONLINE";
+                    elementPing.innerText = `${Math.floor(15 + (randomSeed % 40))} ms`;
+                    elementBattery.innerText = `${Math.floor(80 + (randomSeed % 20))}% (Good)`;
+                    elementMileage.innerText = `${(randomSeed % 800) + 120} m`;
+                    showNotification(`Sync successful with device ${cleanId}!`);
+                } else if (randomSeed % 3 === 1) {
+                    elementReg.className = "text-amber-500 font-bold uppercase";
+                    elementReg.innerText = "STANDBY";
+                    elementPing.innerText = `${Math.floor(110 + (randomSeed % 120))} ms`;
+                    elementBattery.innerText = `${Math.floor(20 + (randomSeed % 50))}% (Low)`;
+                    elementMileage.innerText = `${(randomSeed % 2500) + 800} m`;
+                    showNotification(`Device ${cleanId} reported low battery metrics.`);
+                } else {
+                    elementReg.className = "text-red-500 font-bold uppercase";
+                    elementReg.innerText = "OFFLINE";
+                    elementPing.innerText = "-- ms";
+                    elementBattery.innerText = "UNKNOWN";
+                    elementMileage.innerText = "-- m";
+                    showNotification(`Terminal ${cleanId} is currently offline.`);
+                }
+
+            }, 1200);
+        }
+    </script>
+</body>
+</html>

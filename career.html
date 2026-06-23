@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | ConvaPDF Thermal Printing Ecosystem</title>
+    <link rel="icon" type="image/png" href="Assets/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        .card-subtle {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .card-subtle:hover {
+            border-color: #111827;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .brand-logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+        .ticket-clip {
+            clip-path: polygon(
+                0% 0%, 100% 0%, 
+                100% 35%, 97% 40%, 100% 45%, 100% 100%, 
+                0% 100%, 0% 45%, 3% 40%, 0% 35%
+            );
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                   <img src="Assets/logo crop.png" alt="ConvaPDF Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">     
+                   <span style="display:none;" class="font-bold text-xl tracking-tight text-slate-900">ConvaPDF</span>
+                </a>
+            </div>
+            
+            <button class="block md:hidden p-2 text-slate-700 hover:text-black" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                <a href="hardware.html" class="hover:text-black transition-colors">Hardware</a>
+                <a href="android.html" class="hover:text-black transition-colors">Android App</a>
+                <a href="ios.html" class="hover:text-black transition-colors">iOS App (Beta)</a>
+                <a href="cloud.html" class="hover:text-black transition-colors">Cloud Suite</a>
+                <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+                <a href="#" class="text-black border-b-2 border-slate-950 pb-1 transition-colors">Careers</a>
+                <a href="index.html#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-black transition-all">Get Started</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 flex flex-col space-y-4 font-medium text-sm text-slate-600">
+            <a href="index.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Home</a>
+            <a href="hardware.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Hardware</a>
+            <a href="android.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Android App</a>
+            <a href="ios.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">iOS App (Beta)</a>
+            <a href="cloud.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">Cloud Suite</a>
+            <a href="about.html" class="hover:text-black transition-colors" onclick="toggleMobileMenu()">About Us</a>
+            <a href="#" class="text-black transition-colors" onclick="toggleMobileMenu()">Careers</a>
+            <a href="index.html#contact" class="w-full text-center px-5 py-2.5 bg-slate-900 text-white rounded-xl hover:bg-black transition-all block" onclick="toggleMobileMenu()">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 md:pt-40 pb-20 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 max-w-full text-center">
+                <span>Join the print revolution</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                Shaping the Future of <br><span class="gradient-text">Physical-Digital Workflows.</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
+                At ConvaPDF, we are breaking down barriers between screens and physical paper records. Join our remote team of embedded systems programmers, cloud architects, and product designers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#open-roles" class="px-6 py-3 bg-slate-900 text-white rounded-xl hover:bg-black transition-all text-sm font-semibold flex items-center justify-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> View Open Positions
+                </a>
+                <a href="#perks-section" class="px-6 py-3 bg-white border border-gray-200 text-slate-700 hover:border-black rounded-xl transition-all text-sm font-semibold flex items-center justify-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> Explore Life at Conva
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="perks-section" class="py-16 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest block mb-1">CULTURE & BENEFITS</span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Work With Us?</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">We provide the resources, flexibility, and creative autonomy to help you build your best possible work.</p>
+            </div>
+
+            <!-- Perks Tabs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Perk 1 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6 text-indigo-500">
+                            <i data-lucide="home" class="w-10 h-10"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">100% Distributed Team</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Work from wherever you are happiest. We support asynchronous collaboration structures, letting you configure your own focus hours.</p>
+                    </div>
+                </div>
+                <!-- Perk 2 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6 text-indigo-500">
+                            <i data-lucide="wrench" class="w-10 h-10"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Custom Gear Allowance</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Receive a complete home workspace setup budget, including Apple hardware, standing desk allowances, and full thermal printing developer kits.</p>
+                    </div>
+                </div>
+                <!-- Perk 3 -->
+                <div class="p-8 rounded-3xl card-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6 text-indigo-500">
+                            <i data-lucide="heart" class="w-10 h-10"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3 text-slate-900">Premium Health Plan</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Full medical coverage for you and your family, accompanied by flexible wellness budgets and annual physical mental wellness leaves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="open-roles" class="py-16 px-6 bg-[#fafafa]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">CURRENT OPENINGS</span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Choose Your Next Challenge</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Filter through our active roles and apply to join a high-growth team shaping portable retail ecosystems.</p>
+            </div>
+
+            <!-- Job Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button onclick="filterRoles('all')" id="filter-all" class="px-5 py-2.5 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-md">All Roles</button>
+                <button onclick="filterRoles('engineering')" id="filter-engineering" class="px-5 py-2.5 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Engineering</button>
+                <button onclick="filterRoles('product')" id="filter-product" class="px-5 py-2.5 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Product / Design</button>
+                <button onclick="filterRoles('operations')" id="filter-operations" class="px-5 py-2.5 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all">Operations</button>
+            </div>
+
+            <!-- Jobs Listing Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto" id="roles-grid">
+                
+                <!-- Job Item 1 (Engineering) -->
+                <div class="role-card bg-white border border-gray-200 rounded-3xl p-6 flex flex-col justify-between transition-all hover:border-slate-950 hover:shadow-lg" data-dept="engineering">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-[10px] font-bold uppercase tracking-wide">Engineering</span>
+                            <span class="text-slate-400 text-xs font-semibold">Remote (Global)</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Senior iOS Engineer (SwiftUI / CoreBluetooth)</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">Drive the architecture of our native SwiftUI app, optimize CoreBluetooth layers for instant printing pairing, and integrate Apple Wallet passes.</p>
+                    </div>
+                    <button onclick="openApplyPortal('Senior iOS Engineer', 'Engineering')" class="w-full py-3 bg-slate-50 hover:bg-slate-900 hover:text-white text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        Apply for this Role <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Job Item 2 (Engineering) -->
+                <div class="role-card bg-white border border-gray-200 rounded-3xl p-6 flex flex-col justify-between transition-all hover:border-slate-950 hover:shadow-lg" data-dept="engineering">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-[10px] font-bold uppercase tracking-wide">Engineering</span>
+                            <span class="text-slate-400 text-xs font-semibold">Remote (APAC/Europe)</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Embedded Systems & Firmware Developer</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">Write high-performance micro-controller code for Direct Thermal printheads, optimize battery distribution firmware, and integrate Bluetooth BLE stack APIs.</p>
+                    </div>
+                    <button onclick="openApplyPortal('Embedded Systems Developer', 'Engineering')" class="w-full py-3 bg-slate-50 hover:bg-slate-900 hover:text-white text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        Apply for this Role <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Job Item 3 (Product) -->
+                <div class="role-card bg-white border border-gray-200 rounded-3xl p-6 flex flex-col justify-between transition-all hover:border-slate-950 hover:shadow-lg" data-dept="product">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-700 text-[10px] font-bold uppercase tracking-wide">Product / Design</span>
+                            <span class="text-slate-400 text-xs font-semibold">Remote (US/Americas)</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Senior Ecosystem Designer (UX/UI)</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">Own the interface designs across mobile platforms, shape consistent physical paper templates layouts, and lead packaging visual architectures.</p>
+                    </div>
+                    <button onclick="openApplyPortal('Senior Ecosystem Designer', 'Product')" class="w-full py-3 bg-slate-50 hover:bg-slate-900 hover:text-white text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        Apply for this Role <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Job Item 4 (Operations) -->
+                <div class="role-card bg-white border border-gray-200 rounded-3xl p-6 flex flex-col justify-between transition-all hover:border-slate-950 hover:shadow-lg" data-dept="operations">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 bg-amber-50 border border-amber-100 rounded-full text-amber-700 text-[10px] font-bold uppercase tracking-wide">Operations</span>
+                            <span class="text-slate-400 text-xs font-semibold">Mumbai, India (Hybrid)</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Global Hardware Logistics Manager</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">Manage supply chain pipelines for printed components, monitor distribution nodes, and drive seamless wholesale delivery networks with our retailers.</p>
+                    </div>
+                    <button onclick="openApplyPortal('Global Logistics Manager', 'Operations')" class="w-full py-3 bg-slate-50 hover:bg-slate-900 hover:text-white text-slate-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        Apply for this Role <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Modal Slideover container -->
+    <div id="apply-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-end transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="w-full max-w-lg bg-white h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto transform translate-x-full transition-transform duration-300" id="apply-drawer">
+            <div>
+                <!-- Modal Close & Title -->
+                <div class="flex items-center justify-between pb-6 border-b border-gray-100">
+                    <div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">JOB APPLICATION PORTAL</span>
+                        <h3 class="text-xl font-bold text-slate-900" id="portal-role-title">Applying for Senior iOS Engineer</h3>
+                    </div>
+                    <button onclick="closeApplyPortal()" class="p-2 text-slate-400 hover:text-black rounded-lg bg-slate-50 hover:bg-slate-100 transition-all">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <!-- Step 1: Input Form -->
+                <div id="modal-form-step" class="py-6 space-y-4">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Full Name</label>
+                        <input type="text" id="app-name" placeholder="John Doe" class="w-full text-xs p-3.5 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 text-slate-800">
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Email Address</label>
+                        <input type="email" id="app-email" placeholder="john@example.com" class="w-full text-xs p-3.5 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 text-slate-800">
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Portfolio or LinkedIn URL</label>
+                        <input type="text" id="app-link" placeholder="linkedin.com/in/johndoe" class="w-full text-xs p-3.5 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 text-slate-800">
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Brief Cover Statement</label>
+                        <textarea id="app-message" placeholder="Why do you want to print anything, anywhere?" class="w-full h-24 text-xs p-3.5 bg-slate-50 border border-gray-200 rounded-xl outline-none focus:border-slate-900 resize-none text-slate-800"></textarea>
+                    </div>
+
+                    <!-- Fake file drag element -->
+                    <div class="border border-dashed border-gray-200 rounded-xl p-4 text-center bg-slate-50">
+                        <i data-lucide="upload-cloud" class="w-6 h-6 mx-auto mb-2 text-slate-400"></i>
+                        <span class="text-[11px] font-bold text-slate-800 block">Upload Resume PDF</span>
+                        <span class="text-[9px] text-slate-400 block mt-0.5">Maximum size: 8MB</span>
+                    </div>
+                </div>
+
+                <!-- Step 2: Submission Success Ticket Visual -->
+                <div id="modal-ticket-step" class="hidden py-6 space-y-6">
+                    <div class="max-w-sm mx-auto bg-slate-900 text-white rounded-3xl p-6 shadow-2xl relative ticket-clip border border-slate-700/60 text-center">
+                        <div class="flex justify-between items-center pb-4 border-b border-dashed border-slate-800">
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 bg-indigo-500 rounded flex items-center justify-center">
+                                    <div class="w-1.5 h-1.5 bg-white rounded-sm"></div>
+                                </div>
+                                <span class="text-[10px] font-bold tracking-widest text-slate-200 uppercase">Priority Candidate Pass</span>
+                            </div>
+                            <span class="px-2.5 py-0.5 bg-indigo-500/20 text-indigo-400 text-[8px] rounded-full font-extrabold uppercase tracking-widest border border-indigo-500/30">RECEIVED</span>
+                        </div>
+
+                        <div class="py-6 space-y-4 text-left">
+                            <div>
+                                <span class="text-[9px] text-slate-500 uppercase font-semibold block">Applicant Name</span>
+                                <p class="text-xs font-bold text-slate-200" id="ticket-applicant-name">John Doe</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-semibold">Assigned ID</span>
+                                    <p class="text-xs font-bold font-mono text-indigo-400" id="ticket-app-id">#CONVA-9812A</p>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-semibold">Review Window</span>
+                                    <p class="text-xs font-bold text-slate-200">24 - 48 Hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barcode Simulation for premium visual appeal -->
+                        <div class="bg-white p-3 rounded-xl flex flex-col items-center justify-center space-y-1 mt-2">
+                            <svg class="w-full h-10" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0" y="0" width="2" height="40" fill="black"/>
+                                <rect x="3" y="0" width="1" height="40" fill="black"/>
+                                <rect x="6" y="0" width="3" height="40" fill="black"/>
+                                <rect x="11" y="0" width="1" height="40" fill="black"/>
+                                <rect x="14" y="0" width="2" height="40" fill="black"/>
+                                <rect x="18" y="0" width="4" height="40" fill="black"/>
+                                <rect x="24" y="0" width="1" height="40" fill="black"/>
+                                <rect x="27" y="0" width="3" height="40" fill="black"/>
+                                <rect x="32" y="0" width="2" height="40" fill="black"/>
+                                <rect x="36" y="0" width="1" height="40" fill="black"/>
+                                <rect x="42" y="0" width="2" height="40" fill="black"/>
+                                <rect x="46" y="0" width="1" height="40" fill="black"/>
+                                <rect x="50" y="0" width="3" height="40" fill="black"/>
+                                <rect x="55" y="0" width="1" height="40" fill="black"/>
+                                <rect x="58" y="0" width="2" height="40" fill="black"/>
+                                <rect x="62" y="0" width="4" height="40" fill="black"/>
+                                <rect x="68" y="0" width="1" height="40" fill="black"/>
+                                <rect x="71" y="0" width="3" height="40" fill="black"/>
+                                <rect x="76" y="0" width="2" height="40" fill="black"/>
+                                <rect x="80" y="0" width="1" height="40" fill="black"/>
+                                <rect x="84" y="0" width="4" height="40" fill="black"/>
+                                <rect x="91" y="0" width="1" height="40" fill="black"/>
+                                <rect x="94" y="0" width="3" height="40" fill="black"/>
+                            </svg>
+                            <span class="text-[8px] font-mono tracking-widest text-slate-500 uppercase">Verification Auth Token</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="border-t border-gray-100 pt-4 mt-6">
+                <button onclick="submitApplication()" id="btn-submit-app" class="w-full py-4 bg-slate-900 hover:bg-black text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="check-square" class="w-4 h-4"></i> Submit My Application
+                </button>
+                <button onclick="closeApplyPortal()" id="btn-done-app" class="hidden w-full py-4 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition-all">
+                    All Done, Thank You!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-24 px-6 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">INTERVIEW DISCLOSURES</span>
+                <h2 class="text-3xl font-bold text-slate-900">Application FAQs</h2>
+                <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">Everything you need to understand about our collaborative hiring loops.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-2xl p-6 bg-slate-50 transition-all">
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">How fast do recruiters review submissions?</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">We review submissions within 48 business hours. If your background aligns with our core stack frameworks, our recruitment team will send a scheduling invitation.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-2xl p-6 bg-slate-50 transition-all">
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">What does the technical loop entail?</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">We respect developers' focus. There are no multi-hour algorithms puzzles. Our loop consists of a 45-minute architectural review and a clean 1-hour live pairing session directly focused on hardware communication paradigms.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-2xl p-6 bg-slate-50 transition-all">
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">Do you provide sponsorship programs?</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Yes! As a global distributed team, we work cleanly with global contractor infrastructures (like Deel) and process visual remote operations across international territories without restrictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-app interactive Notification framework -->
+    <div id="notify-popup" class="fixed bottom-6 right-6 bg-slate-950 text-white rounded-2xl px-5 py-3 shadow-2xl border border-slate-800 text-xs font-semibold tracking-wide hidden items-center gap-2.5 z-50 animate-bounce">
+        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-ping"></div>
+        <span id="notify-msg">Message copied successfully!</span>
+    </div>
+
+       <footer class="py-16 border-t border-gray-100 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 pt-1">
+                    <div class="flex items-center mb-4">
+                        <img src="Assets/logo crop.png" alt="ConvaPDF Logo" style="height: 30px; width: auto; display: block;" />
+                    </div>
+                    <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                        A production-ready retail application paired with inkless thermal hardware, transforming smartphones into high-speed billing terminals with professional formatting and quick-connect printer utilities.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Product</h5>
+                    <ul class="space-y-2">
+                        <li><a href="hardware.html" class="hover:text-black">Hardware</a></li>
+                        <li><a href="ios.html" class="hover:text-black">iOS App</a></li>
+                        <li><a href="android.html" class="hover:text-black">Android App</a></li>
+                        <li><a href="cloudsuite.html" class="hover:text-black">Cloud Suite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-black">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-black">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-4 text-base">Support</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-black">Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-black">Contact Us</a></li>
+                        <li><a href="privacypolicy.html" class="hover:text-black">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2026 ConvaPDF.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                    <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu toggle function
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // --- Custom Notifications Engine ---
+        function showNotification(msg) {
+            const popup = document.getElementById('notify-popup');
+            document.getElementById('notify-msg').innerText = msg;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 3000);
+        }
+
+        // --- Interactive Careers Board Filter ---
+        function filterRoles(category) {
+            const roles = document.querySelectorAll('.role-card');
+            const buttons = ['all', 'engineering', 'product', 'operations'];
+
+            // Style state updates
+            buttons.forEach(b => {
+                const btnEl = document.getElementById(`filter-${b}`);
+                if (b === category) {
+                    btnEl.className = "px-5 py-2.5 rounded-full text-xs font-bold bg-slate-900 text-white transition-all shadow-md";
+                } else {
+                    btnEl.className = "px-5 py-2.5 rounded-full text-xs font-bold bg-white text-slate-500 border border-gray-200 hover:border-black transition-all";
+                }
+            });
+
+            // Grid filtering animation
+            roles.forEach(role => {
+                const dept = role.getAttribute('data-dept');
+                if (category === 'all' || dept === category) {
+                    role.classList.remove('hidden');
+                } else {
+                    role.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- Interactive Job Application Modal Portal ---
+        let currentApplyingRole = "";
+
+        function openApplyPortal(roleName, deptName) {
+            currentApplyingRole = roleName;
+            document.getElementById('portal-role-title').innerText = `Applying for: ${roleName}`;
+            
+            // Open animation transitions
+            const modal = document.getElementById('apply-modal');
+            const drawer = document.getElementById('apply-drawer');
+            
+            modal.classList.remove('pointer-events-none');
+            modal.classList.add('opacity-100');
+            drawer.classList.remove('translate-x-full');
+
+            // Reset back to Step 1 Form
+            document.getElementById('modal-form-step').classList.remove('hidden');
+            document.getElementById('modal-ticket-step').classList.add('hidden');
+            document.getElementById('btn-submit-app').classList.remove('hidden');
+            document.getElementById('btn-done-app').classList.add('hidden');
+        }
+
+        function closeApplyPortal() {
+            const modal = document.getElementById('apply-modal');
+            const drawer = document.getElementById('apply-drawer');
+            
+            modal.classList.add('pointer-events-none');
+            modal.classList.remove('opacity-100');
+            drawer.classList.add('translate-x-full');
+        }
+
+        function submitApplication() {
+            const appName = document.getElementById('app-name').value.trim();
+            const appEmail = document.getElementById('app-email').value.trim();
+            
+            if (!appName || !appEmail || !appEmail.includes('@')) {
+                showNotification("Please enter a valid Name and Email Address.");
+                return;
+            }
+
+            // Sync visual ticket contents
+            document.getElementById('ticket-applicant-name').innerText = appName;
+            const uniqueId = `CONVA-INTERVIEW-${Math.floor(1000 + Math.random() * 9000)}`;
+            document.getElementById('ticket-app-id').innerText = `#${uniqueId}`;
+
+            // Transit step to confirmation ticket
+            document.getElementById('modal-form-step').classList.add('hidden');
+            document.getElementById('modal-ticket-step').classList.remove('hidden');
+            document.getElementById('btn-submit-app').classList.add('hidden');
+            document.getElementById('btn-done-app').classList.remove('hidden');
+
+            showNotification("Application compiled successfully!");
+        }
+    </script>
+</body>
+</html>
